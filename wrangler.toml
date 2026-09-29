@@ -1,0 +1,6 @@
+name = "heloush-crochet"
+compatibility_date = "2026-09-29"
+
+[assets]
+directory = "./public"
+html_handling = "auto-trailing-slash"
