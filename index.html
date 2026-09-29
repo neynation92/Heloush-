@@ -1,0 +1,36 @@
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heloush Crochet</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eaf1ef;color:#17201d;font-family:Arial,sans-serif}.app{max-width:520px;margin:auto;min-height:100vh;background:#f7faf9;padding-bottom:80px}
+.header{height:74px;background:#7d2141;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 15px;position:sticky;top:0;z-index:5}.brand{display:flex;align-items:center;gap:9px}.logo{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid #d7a12b;background:#fff}.brand b{font:700 20px Georgia;display:block}.brand small{font-size:9px;letter-spacing:3px;color:#f3d38a}
+.hero{margin:10px;height:188px;border-radius:15px;overflow:hidden;position:relative;background:linear-gradient(110deg,#5c1732,#b33f62 55%,#efc4cf)}.hero-logo{position:absolute;right:13px;top:13px;width:61px;height:61px;border-radius:50%;object-fit:cover;border:2px solid #f5d68b;z-index:2}.hero-text{position:absolute;z-index:2;left:18px;top:25px;color:#fff;max-width:270px}.hero-text h1{font:700 29px/1.02 Georgia;margin:0 0 10px}.hero-text h1 span{color:#ffd66f}.hero-text p{font-size:12px;line-height:1.45}.hero-yarn{position:absolute;right:20px;bottom:10px;width:125px;height:125px;border-radius:50%;background:repeating-linear-gradient(25deg,#d76482 0 7px,#f0a3b5 8px 13px);box-shadow:inset -18px -20px 25px #7e2444}
+.search{margin:0 10px 14px;background:#fff;border-radius:11px;height:50px;display:flex;align-items:center;padding:0 15px}.search input{border:0;outline:0;font-size:13px;width:100%}.section{padding:0 10px;margin-top:14px}.section-title{display:flex;justify-content:space-between;margin:0 5px 9px}.section-title h2{font:700 20px Georgia;margin:0}.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.cat{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px #193b2b12}.cat img{width:100%;height:92px;object-fit:cover}.cat-body{padding:9px 10px 11px;font-size:12px;font-weight:700}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.product{background:#fff;border-radius:12px;overflow:hidden}.product-img{height:125px;background:#efd6dc;display:grid;place-items:center;font-size:65px}.product-body{padding:9px}.product h3{font-size:13px;margin:0 0 5px}.price{font-size:13px;font-weight:800;color:#7d2141}.buy,.training{display:block;margin-top:8px;text-align:center;background:#7d2141;color:#fff;padding:9px;border-radius:8px;font-size:10px;font-weight:bold;border:0;width:100%}
+.form-card{margin:15px 10px;background:#fff;border-radius:14px;padding:16px}.form-card h3{font:700 19px Georgia;margin:0 0 6px}.form-card p{font-size:12px;color:#6e6266}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.form-grid input,.form-grid select,.form-grid textarea{font:inherit;padding:10px;border:1px solid #ddd;border-radius:8px;width:100%;font-size:11px}.form-grid textarea{grid-column:1/-1;min-height:60px}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:70px;background:#fff;border-top:1px solid #ddd;display:grid;grid-template-columns:repeat(4,1fr);z-index:10}.nav{text-align:center;padding-top:10px;font-size:10px;color:#766d70}.nav strong{display:block;font-size:23px}.nav.active{color:#7d2141;font-weight:bold}
+</style></head><body><div class="app">
+<header class="header"><div class="brand"><img class="logo" src="logo.svg"><div><b>Heloush</b><small>CROCHET</small></div></div><div>♡　◉</div></header>
+<section class="hero"><img class="hero-logo" src="logo.svg"><div class="hero-text"><h1>Créez avec <span>la laine</span></h1><p>Des créations uniques, des accessoires tendance et des formations pour apprendre le crochet.</p></div><div class="hero-yarn"></div></section>
+<div class="search">⌕　<input id="search" placeholder="Rechercher une création, une formation..."></div>
+<section class="section"><div class="section-title"><h2>Nos catégories</h2></div><div class="categories">
+<div class="cat"><img src="category-sacs.svg"><div class="cat-body">Sacs & accessoires en laine</div></div>
+<div class="cat"><img src="category-vetements.svg"><div class="cat-body">Vêtements au crochet</div></div>
+<div class="cat"><img src="category-deco.svg"><div class="cat-body">Articles décoratifs</div></div>
+<div class="cat"><img src="category-formation.svg"><div class="cat-body">Formations en crochet</div></div>
+</div></section>
+<section class="section"><div class="section-title"><h2>Nos créations</h2></div><div class="products" id="products"></div></section>
+<section class="form-card"><h3>🎓 Inscription à une formation</h3><p>Remplissez le formulaire. L'inscription sera finalisée directement sur WhatsApp.</p><div class="form-grid">
+<input id="fname" placeholder="Nom et prénom"><input id="fphone" placeholder="Téléphone"><select id="fcourse"></select><input id="fcity" placeholder="Ville"><textarea id="fmsg" placeholder="Message"></textarea></div><button class="training" onclick="sendTraining()">Envoyer sur WhatsApp</button></section>
+<nav class="bottom"><div class="nav active"><strong>⌂</strong>Accueil</div><div class="nav"><strong>♡</strong>Favoris</div><div class="nav"><strong>▣</strong>Commandes</div><div class="nav"><strong>♙</strong>Compte</div></nav>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="supabase.js"></script>
+<script>
+const phone="22893788312"; let products=[], formations=[];
+const money=n=>Number(n).toLocaleString("fr-FR")+" F CFA";
+async function load(){let p=await supabaseClient.from("products").select("*").eq("active",true).order("created_at",{ascending:false});let f=await supabaseClient.from("formations").select("*").eq("active",true).order("created_at",{ascending:false});products=p.data||[];formations=f.data||[];document.getElementById("fcourse").innerHTML=formations.map(x=>`<option>${x.name}</option>`).join("");render()}
+function render(){let q=document.getElementById("search").value.toLowerCase();document.getElementById("products").innerHTML=products.filter(x=>x.name.toLowerCase().includes(q)).map(x=>`<article class="product"><div class="product-img">${x.image_url?`<img src="${x.image_url}" style="width:100%;height:100%;object-fit:cover">`:"🧶"}</div><div class="product-body"><h3>${x.name}</h3><div class="price">${money(x.price)}</div><div style="font-size:9px;color:#777">${x.description||""}</div><a class="buy" target="_blank" href="https://wa.me/${phone}?text=${encodeURIComponent("Bonjour Heloush Crochet 👋 Je souhaite commander : "+x.name+" — "+money(x.price))}">Commander sur WhatsApp</a></div></article>`).join("")||"<p>Aucune création trouvée.</p>"}
+document.getElementById("search").oninput=render;
+function sendTraining(){let n=fname.value.trim(),p=fphone.value.trim(),c=fcourse.value,city=fcity.value.trim(),m=fmsg.value.trim();if(!n||!p)return alert("Veuillez renseigner votre nom et votre téléphone.");let t=`Bonjour Heloush Crochet 👋\nInscription à une formation\nNom : ${n}\nTéléphone : ${p}\nFormation : ${c}\nVille : ${city}\nMessage : ${m}`;window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(t),"_blank")}
+load();
+</script></body></html>
